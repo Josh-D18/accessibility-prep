@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibile Form</title>
+</head>
+<body>
+    <h1 class="heading">General Admission Registration</h1>
+    <form class="form">
+        <label for="name">Name</label>
+        <input name="firstname" id="name" placeholder="First Name" class="input">
+        <input name="lastname" id="name" placeholder="Last Name" class="input">
+
+        <label for="email">Email</label>
+        <input name="email" placeholder="Email" class="input" id="email">
+
+        <fieldset class="fieldset-container">
+            <label for="gender">Gender</label>
+
+            <input name="gender" id="male" type="radio" class="input-radio">
+            <label for="male">Male</label>
+
+            <input type="radio" name="gender" id="female" class="input-radio">
+            <label for="female">Female</label>
+        </fieldset>
+
+        <label for="phone">Phone</label>
+        <input type="text" placeholder="Phone Number" id="phone" class="input">
+
+        <label for="emergency">Emergency Contact</label>
+        <input type="text" placeholder="Emergency Contact" id="emergency">
+
+        <fieldset class="fieldset-container">
+            <label>Do you require parking?</label>
+
+            <input type="radio" name="parking" id="yes-parking">
+            <label for="yes-parking">Yes</label>
+
+            <input type="radio" name="parking" id="no-parking">
+            <label for="no-parking">No</label>
+        </fieldset>
+
+        <fieldset class="fieldset-container">
+            <label>What is your room preference?</label>
+
+            <input type="radio" name="room-pref" id="single-room">
+            <label for="single-room">Single Room</label>
+
+            <input type="radio" name="room-pref" id="shared-room">
+            <label for="shared-room">Shared Room</label>
+
+            <input type="radio" name="room-pref" id="no-room-needed">
+            <label for="no-room-needed">No Room Needed</label>
+        </fieldset>
+
+        <fieldset class="fieldset-container">
+            <label>Do you have any dietary restrictions</label>
+
+            <input type="radio" name="diet" id="vegatarian" name="allergy">
+            <label for="vegatarian">Vegatarian</label>
+
+            <input type="radio" name="diet" id="glutten" name="allergy">
+            <label for="glutten">Gutten Allergy</label>
+
+            <input type="radio" name="diet" id="lactose" name="allergy">
+            <label for="lactose">Lactose Allergy</label>
+            
+            <input type="radio" name="diet" id="nut" name="allergy">
+            <label for="nut">Nut Allergy</label>
+
+            <input type="radio" name="diet" id="shellfish" name="allergy">
+            <label for="shellfish">Shellfish Allergy</label>
+        </fieldset>
+
+        <fieldset class="fieldset-container">
+            <label>What activities will you attend?</label>
+
+            <input type="radio" name="activities" id="gala">
+            <label for="gala">Awards Gala Dinner</label>
+
+            <input type="radio" name="activities" id="luncheon">
+            <label for="luncheon">Luncheon</label>
+
+            <input type="radio" name="activities" id="town-hall">
+            <label for="town-hall">Town Hall</label>
+        </fieldset>
+
+        <fieldset class="fieldset-container">
+            <label>Do you want to see the list of other attendees and their profiles on the official event app</label>
+            
+            <input type="radio" name="attendees" id="yes-attendees">
+            <label for="yes-attendees">Yes</label>
+
+            <input type="radio" name="attendees" id="no-attendees">
+            <label for="no-attendees">No</label>
+        </fieldset>
+    </form>
+</body>
+</html>
