@@ -3,98 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Accessibile Form</title>
 </head>
 <body>
-    <h1 class="heading">General Admission Registration</h1>
-    <form class="form">
-        <label for="name">Name</label>
-        <input name="firstname" id="name" placeholder="First Name" class="input">
-        <input name="lastname" id="name" placeholder="Last Name" class="input">
+    <main>
+        <h1 class="heading">General Admission Registration</h1>
+        <form class="form" aria-label="General Admissions Form">
+            <div class="form-section-one">
+                <fieldset class="fieldset-container">
+                    <legend class="title">Full Name</legend>
+                  
+                    <label class="label-title" for="firstname">First Name</label>
+                    <input name="name" id="firstname" placeholder="First Name" class="input-text" autocomplete="given-name">
+                    <br>
+                    <label class="label-title" for="lastname">Last Name</label>
+                    <input name="name" id="lastname" placeholder="Last Name" class="input-text" autocomplete="family-name">
+                  </fieldset>
+        
+                <fieldset class="fieldset-container">
+                    <label for="email" class="label-title">Email</label>
+                    <input name="email" placeholder="Email" class="input-text" id="email" type="email" autocomplete="email">    
+                </fieldset>
+        
+                <fieldset class="fieldset-container options">
+                    <legend class="title">Gender</legend>
+                    
+                    <div class="radio-option">
+                        <input name="gender" id="male" type="radio" class="input-radio">
+                        <label for="male">Male</label>
+                    </div>
+                       
+                    <div class="radio-option">
+                        <input type="radio" name="gender" id="female" class="input-radio">
+                        <label for="female">Female</label>
+                    </div>
+                </fieldset>
+        
+                <fieldset class="fieldset-container">
+                    <label for="phone" class="label-title">Phone</label>
+                    <input type="tel" placeholder="Phone Number" id="phone" class="input-text" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                </fieldset>
+        
+                <fieldset class="fieldset-container">
+                    <label for="emergency" class="label-title">Emergency Contact</label>
+                    <input type="text" placeholder="Emergency Contact" id="emergency" class="input-text">
+                </fieldset>
+        
+                <fieldset class="fieldset-container options">
+                    <legend class="title">Do you require parking?</legend>
+                    
+                    <div class="radio-option">
+                        <input type="radio" name="parking" id="yes-parking" class="input-radio">
+                        <label for="yes-parking">Yes</label>
+                    </div>
+        
+                    <div class="radio-option">
+                        <input type="radio" name="parking" id="no-parking" class="input-radio">
+                        <label for="no-parking">No</label>
+                    </div>
+                </fieldset>
+        
+                <fieldset class="fieldset-container options">
+                    <legend class="title">What is your room preference?</legend>
+        
+                    <div class="radio-option">
+                        <input type="radio" name="room-pref" id="single-room" class="input-radio">
+                        <label for="single-room">Single Room</label>
+                    </div>
 
-        <label for="email">Email</label>
-        <input name="email" placeholder="Email" class="input" id="email">
-
-        <fieldset class="fieldset-container">
-            <label for="gender">Gender</label>
-
-            <input name="gender" id="male" type="radio" class="input-radio">
-            <label for="male">Male</label>
-
-            <input type="radio" name="gender" id="female" class="input-radio">
-            <label for="female">Female</label>
-        </fieldset>
-
-        <label for="phone">Phone</label>
-        <input type="text" placeholder="Phone Number" id="phone" class="input">
-
-        <label for="emergency">Emergency Contact</label>
-        <input type="text" placeholder="Emergency Contact" id="emergency">
-
-        <fieldset class="fieldset-container">
-            <label>Do you require parking?</label>
-
-            <input type="radio" name="parking" id="yes-parking">
-            <label for="yes-parking">Yes</label>
-
-            <input type="radio" name="parking" id="no-parking">
-            <label for="no-parking">No</label>
-        </fieldset>
-
-        <fieldset class="fieldset-container">
-            <label>What is your room preference?</label>
-
-            <input type="radio" name="room-pref" id="single-room">
-            <label for="single-room">Single Room</label>
-
-            <input type="radio" name="room-pref" id="shared-room">
-            <label for="shared-room">Shared Room</label>
-
-            <input type="radio" name="room-pref" id="no-room-needed">
-            <label for="no-room-needed">No Room Needed</label>
-        </fieldset>
-
-        <fieldset class="fieldset-container">
-            <label>Do you have any dietary restrictions</label>
-
-            <input type="radio" name="diet" id="vegatarian" name="allergy">
-            <label for="vegatarian">Vegatarian</label>
-
-            <input type="radio" name="diet" id="glutten" name="allergy">
-            <label for="glutten">Gutten Allergy</label>
-
-            <input type="radio" name="diet" id="lactose" name="allergy">
-            <label for="lactose">Lactose Allergy</label>
+                    <div class="radio-option">
+                        <input type="radio" name="room-pref" id="shared-room" class="input-radio">
+                        <label for="shared-room">Shared Room</label>
+                    </div>
+        
+                    <div class="radio-option">
+                        <input type="radio" name="room-pref" id="no-room-needed" class="input-radio">
+                        <label for="no-room-needed">No Room Needed</label>
+                    </div>
+                </fieldset>
+            </div>
             
-            <input type="radio" name="diet" id="nut" name="allergy">
-            <label for="nut">Nut Allergy</label>
+            <div class="form-section-two">
+                <fieldset class="fieldset-container options">
+                    <legend class="title">Do you have any dietary restrictions</legend>
+                    
+                    <div class="radio-option">
+                        <input type="radio" name="diet" id="vegatarian" class="input-radio">
+                        <label for="vegatarian">Vegatarian</label>
+                    </div>
 
-            <input type="radio" name="diet" id="shellfish" name="allergy">
-            <label for="shellfish">Shellfish Allergy</label>
-        </fieldset>
+                    <div class="radio-option">
+                        <input type="radio" name="diet" id="glutten" class="input-radio">
+                        <label for="glutten">Gutten Allergy</label>
+                    </div>
 
-        <fieldset class="fieldset-container">
-            <label>What activities will you attend?</label>
+                    <div class="radio-option">
+                        <input type="radio" name="diet" id="lactose" class="input-radio">
+                        <label for="lactose">Lactose Allergy</label>
+                    </div>
 
-            <input type="radio" name="activities" id="gala">
-            <label for="gala">Awards Gala Dinner</label>
+                    <div class="radio-option">
+                        <input type="radio" name="diet" id="nut" class="input-radio">
+                        <label for="nut">Nut Allergy</label>
+                    </div>
 
-            <input type="radio" name="activities" id="luncheon">
-            <label for="luncheon">Luncheon</label>
-
-            <input type="radio" name="activities" id="town-hall">
-            <label for="town-hall">Town Hall</label>
-        </fieldset>
-
-        <fieldset class="fieldset-container">
-            <label>Do you want to see the list of other attendees and their profiles on the official event app</label>
-            
-            <input type="radio" name="attendees" id="yes-attendees">
-            <label for="yes-attendees">Yes</label>
-
-            <input type="radio" name="attendees" id="no-attendees">
-            <label for="no-attendees">No</label>
-        </fieldset>
-    </form>
+                    <div class="radio-option">
+                        <input type="radio" name="diet" id="shellfish" class="input-radio">
+                        <label for="shellfish">Shellfish Allergy</label>
+                    </div>
+                </fieldset>
+        
+                <fieldset class="fieldset-container options">
+                    <legend class="title">What activities will you attend?</legend>
+                    
+                    <div class="radio-option">
+                        <input type="radio" name="activities" id="gala" class="input-radio">
+                        <label for="gala">Awards Gala Dinner</label>
+                    </div>
+        
+                    <div class="radio-option">
+                        <input type="radio" name="activities" id="luncheon" class="input-radio">
+                        <label for="luncheon">Luncheon</label>
+                    </div>
+        
+                    <div class="radio-option">
+                        <input type="radio" name="activities" id="town-hall" class="input-radio">
+                        <label for="town-hall">Town Hall</label>
+                    </div>
+                </fieldset>
+        
+                <fieldset class="fieldset-container options">
+                    <legend class="title">Do you want to see the list of other attendees and their profiles on the official event app</legend>
+                    
+                    <div class="radio-option">
+                        <input type="radio" name="attendees" id="yes-attendees" class="input-radio">
+                        <label for="yes-attendees">Yes</label>
+                    </div>
+        
+                    <div class="radio-option">
+                        <input type="radio" name="attendees" id="no-attendees" class="input-radio">
+                        <label for="no-attendees">No</label>
+                    </div>
+                </fieldset>
+                <button type="submit" id="submissionBtn">Submit</button>
+            </div>
+        </form>
+    </main>
+    <script src="./script.js"></script>
 </body>
 </html>

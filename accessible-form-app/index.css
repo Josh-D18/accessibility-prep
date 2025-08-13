@@ -1,3 +1,66 @@
 .heading{
-    
+  font-size: 30px;
+  text-align: center;
+}
+
+.form{
+    padding: 10px;
+    margin: 25px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.fieldset-container{
+    border: 0px;
+    padding: 0px;
+    margin-bottom: 12px;
+}
+
+.fieldset-container.options{
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-option{
+    margin-bottom: 6px;
+}
+
+.title{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.input-radio{
+    border: 0.1em solid currentColor;
+    border-radius: 50%;
+  
+    /* Adjust the position relative to the text */
+    transform: translateY(.125rem);
+}
+
+.input-text{
+    padding: 9px 25px 9px 5px;  
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.input-text#email{
+    width: 233px;
+}
+
+.input-text#phone{
+    width: 233px;
+}
+
+.label-title{
+    margin-right: 12px;
+}
+
+.form-section-one{
+    flex: 1 0 50%;
+}
+
+.form-section-two{
+    flex: 1 1 50%;
 }
