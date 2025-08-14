@@ -10,63 +10,82 @@ const radioValidationCheckerFunction = (option, inputName) => {
     }
 }
 
+const processErrorData = (tagElement, string, bool) => {
+    if(bool){
+        tagElement.hidden = false
+        tagElement.textContent = string
+        tagElement.setAttribute('aria-invalid', 'true');
+    } else {
+        tagElement.hidden = true
+        tagElement.textContent = string
+        tagElement.removeAttribute('aria-invalid');
+    }
+}
+
 const nameValidationCheck = () => {
     const firstName = document.getElementById('firstname').value;
     const lastName = document.getElementById('lastname').value;
+    const errorTagFirstName = document.getElementById('firstName-length-error')
+    const errorTagLastName = document.getElementById('lastName-length-error')
 
     if(firstName.length === 0){
-        errorsFound['firstName'] = 'Please enter a valid first name!'
+        processErrorData(errorTagFirstName,'Please do not leave the first name field empty', true)
     } else {
-        errorsFound['firstName'] = ''
+        processErrorData(errorTagLastName, '', false)
     }
 
     if(lastName.length === 0){
-        errorsFound['lastName'] = 'Please  enter a valid last name!'
+        processErrorData(errorTagLastName, 'Please do not leave the last name field empty', true)   
     } else {
-        errorsFound['lastName'] = ''
+        processErrorData(errorTagLastName, '', false)
     }
 }
 
 const emailValidationCheck = () => {
-    const email = document.getElementById('#email').value
+    const email = document.getElementById('email').value;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const errorTagEmail = document.getElementById('invalid-email');
 
     if (email.length === 0) {
-        errorsFound['email'] = 'Please do not leave the email field empty'
+        processErrorData(errorTagEmail, 'Please do not leave the email field empty', true)
     } else if(emailRegex.test(email)){
-        errorsFound['email'] = 'Please enter a valid email address'
+        processErrorData(errorTagEmail, 'Please enter a valid email address', true)
     } else {
-        errorsFound['email'] = ''
+        processErrorData(errorTagEmail, '', false)
     }
 }
 
 const genderValidationCheck = () => {
     const selectedOption = document.querySelector('input[type="radio"][name="gender"]:checked')
+
     radioValidationCheckerFunction(selectedOption, 'gender')
+
 }
 
 const phoneValidationCheck = () => {
-    const phoneNumber = document.querySelector('#phone')
+    const phoneNumber = document.getElementById('phone')
     const phoneNumberPattern = phoneNumber.getAttribute('pattern')
     const patternRegex = new RegExp(`^${phoneNumberPattern}$`)
     const phoneNumberValue = phoneNumber.value
+    const errorTagPhoneNumber = document.getElementById('invalid-phone-number')
 
     if(phoneNumberValue.length === 0){
-        errorsFound['phone'] = 'Please do not leave this field empty'
+        processErrorData(errorTagPhoneNumber, 'Please do not leave the phone number field empty', true)
     } else if(patternRegex.test(phoneNumberValue)){
-        errorsFound['phone'] = 'Please enter a valid phone number'
+        processErrorData(errorTagPhoneNumber, 'Please enter a valid phone number', true)
     } else {
-        errorsFound['phone'] = ''
+        processErrorData(errorTagPhoneNumber, '', false)
     }
 }
 
 const emergencyValidationCheck = () => {
-    const emergencyContact = document.querySelector('#emergency').value
-    
+    const emergencyContact = document.getElementById('emergency').value
+    const errorTagEmergency = document.getElementById('error-emergency')
+
     if(emergencyContact.length === 0){
-        errorsFound['emergency'] = 'Please do not leave this field empty'
+        processErrorData(errorTagEmergency, 'Please do not leave the emergency field empty', true)
     } else {
-        errorsFound['emergency'] = ''
+        processErrorData(errorTagEmergency, '', false)
     }
 }
 
@@ -98,7 +117,7 @@ const attendeesValidationCheck = () => {
 const handleValidationSubmission = () => {
     nameValidationCheck()
     genderValidationCheck()
-    emailValidationCheck 
+    emailValidationCheck()
     phoneValidationCheck()
     emergencyValidationCheck()
     parkingValidationCheck()

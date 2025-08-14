@@ -15,72 +15,81 @@
                     <legend class="title">Full Name</legend>
                   
                     <label class="label-title" for="firstname">First Name</label>
-                    <input name="name" id="firstname" placeholder="First Name" class="input-text" autocomplete="given-name">
+                    <input name="name" id="firstname" placeholder="First Name" class="input-text" autocomplete="given-name" aria-describedby="firstName-length-error">
+                    <p id="firstName-length-error" class="error-text" aria-live="polite" hidden></p>
                     <br>
                     <label class="label-title" for="lastname">Last Name</label>
-                    <input name="name" id="lastname" placeholder="Last Name" class="input-text" autocomplete="family-name">
+                    <input name="name" id="lastname" placeholder="Last Name" class="input-text" autocomplete="family-name" aria-describedby="lastName-length-error">
+                    <p id="lastName-length-error" class="error-text" aria-live="polite" hidden></p>
                   </fieldset>
         
                 <fieldset class="fieldset-container">
                     <label for="email" class="label-title">Email</label>
-                    <input name="email" placeholder="Email" class="input-text" id="email" type="email" autocomplete="email">    
+                    <input name="email" placeholder="Email" class="input-text" id="email" type="email" autocomplete="email" aria-describedby="invalid-email">   
+                    <p id="invalid-email" class="error-text" aria-live="polite" hidden></p> 
                 </fieldset>
         
                 <fieldset class="fieldset-container options">
                     <legend class="title">Gender</legend>
                     
                     <div class="radio-option">
-                        <input name="gender" id="male" type="radio" class="input-radio">
+                        <input name="gender" id="male" type="radio" class="input-radio" aria-describedby="invalid-gender-option">
                         <label for="male">Male</label>
                     </div>
                        
                     <div class="radio-option">
-                        <input type="radio" name="gender" id="female" class="input-radio">
+                        <input type="radio" name="gender" id="female" class="input-radio" aria-describedby="invalid-gender-option">
                         <label for="female">Female</label>
                     </div>
+
+                    <p id="invalid-gender-option" class="error-text" aria-live="polite" hidden></p>
                 </fieldset>
         
                 <fieldset class="fieldset-container">
                     <label for="phone" class="label-title">Phone</label>
-                    <input type="tel" placeholder="Phone Number" id="phone" class="input-text" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <input type="tel" placeholder="Phone Number" id="phone" class="input-text" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" aria-describedby="invalid-phone-number">
+                    <p id="invalid-phone-number" class="error-text" aria-live="polite" hidden></p>
                 </fieldset>
         
                 <fieldset class="fieldset-container">
                     <label for="emergency" class="label-title">Emergency Contact</label>
-                    <input type="text" placeholder="Emergency Contact" id="emergency" class="input-text">
+                    <input type="text" placeholder="Emergency Contact" id="emergency" class="input-text" aria-describedby="invalid-emergency-contact">
+                    <p id="invalid-emergency-contact" class="error-text" aria-live="polite" hidden></p>
                 </fieldset>
         
                 <fieldset class="fieldset-container options">
                     <legend class="title">Do you require parking?</legend>
                     
                     <div class="radio-option">
-                        <input type="radio" name="parking" id="yes-parking" class="input-radio">
+                        <input type="radio" name="parking" id="yes-parking" class="input-radio" aria-describedby="invalid-parking-option">
                         <label for="yes-parking">Yes</label>
                     </div>
         
                     <div class="radio-option">
-                        <input type="radio" name="parking" id="no-parking" class="input-radio">
+                        <input type="radio" name="parking" id="no-parking" class="input-radio" aria-describedby="invalid-parking-option">
                         <label for="no-parking">No</label>
                     </div>
+                    <p id="invalid-parking-option" class="error-text" aria-live="polite" hidden></p>
                 </fieldset>
         
                 <fieldset class="fieldset-container options">
                     <legend class="title">What is your room preference?</legend>
         
                     <div class="radio-option">
-                        <input type="radio" name="room-pref" id="single-room" class="input-radio">
+                        <input type="radio" name="room-pref" id="single-room" class="input-radio" aria-describedby="invalid-room-pref-option">
                         <label for="single-room">Single Room</label>
                     </div>
 
                     <div class="radio-option">
-                        <input type="radio" name="room-pref" id="shared-room" class="input-radio">
+                        <input type="radio" name="room-pref" id="shared-room" class="input-radio" aria-describedby="invalid-room-pref-option">
                         <label for="shared-room">Shared Room</label>
                     </div>
         
                     <div class="radio-option">
-                        <input type="radio" name="room-pref" id="no-room-needed" class="input-radio">
+                        <input type="radio" name="room-pref" id="no-room-needed" class="input-radio" aria-describedby="invalid-room-pref-option">
                         <label for="no-room-needed">No Room Needed</label>
                     </div>
+                    <p id="invalid-room-pref-option" class="error-text" aria-live="polite" hidden></p>
                 </fieldset>
             </div>
             
@@ -112,6 +121,7 @@
                         <input type="radio" name="diet" id="shellfish" class="input-radio">
                         <label for="shellfish">Shellfish Allergy</label>
                     </div>
+                    <p id="error-diet" class="error-text" aria-live="polite" hidden></p>
                 </fieldset>
         
                 <fieldset class="fieldset-container options">
@@ -131,6 +141,7 @@
                         <input type="radio" name="activities" id="town-hall" class="input-radio">
                         <label for="town-hall">Town Hall</label>
                     </div>
+                    <p id="error-activities" class="error-text" aria-live="polite" hidden></p>
                 </fieldset>
         
                 <fieldset class="fieldset-container options">
@@ -145,6 +156,7 @@
                         <input type="radio" name="attendees" id="no-attendees" class="input-radio">
                         <label for="no-attendees">No</label>
                     </div>
+                    <p id="error-attendees" class="error-text" aria-live="polite" hidden></p>
                 </fieldset>
                 <button type="submit" id="submissionBtn">Submit</button>
             </div>

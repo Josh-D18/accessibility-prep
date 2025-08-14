@@ -64,3 +64,9 @@
 .form-section-two{
     flex: 1 1 50%;
 }
+.error-text{
+    margin: 0px;
+    height: 20px;
+    color: red;
+    font-size: 15px;
+}
